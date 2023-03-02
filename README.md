@@ -24,6 +24,7 @@ $ vim 2022/1/main.py
 Features:
 
 * common tool to pull puzzle text and input text. It should also output a starter code file for each target language.
+** add powershell version for windows hackers
 
 Languages:
 
