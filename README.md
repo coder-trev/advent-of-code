@@ -11,7 +11,7 @@ $ git clone https://github.com/coder-trev/advent-of-code.git
 
 Set environment variable `AOC_SESSION="session=<YOUR SESSION TOKEN>"`. I put mine in my `~/.bashrc` file for persistence. You can pull your session token from the developer tools when you login to the advent of code website.
 
-Run `get-puzzle.sh` to pull resources and created a starter script. Pass in the target year and the day.
+Run `get-puzzle.sh` to pull resources and create a starter script. Pass in the target year and the day.
 
 ```shell
 $ cd python

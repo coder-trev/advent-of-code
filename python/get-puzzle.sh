@@ -19,7 +19,9 @@ if [[ ! -f $PUZZLE ]]; then
 fi
 
 # create main file
-if [[ ! -f $MAIN ]]; then
+if [[ -f $MAIN ]]; then
+    echo "Oops. Looks like there's already code for 12/$DAY/$YEAR. You'll need to delete $MAIN to start from scratch."
+else
     cp template.py $MAIN
 fi
 
