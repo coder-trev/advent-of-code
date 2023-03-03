@@ -13,16 +13,24 @@ mkdir -p $DEST
 
 #pull puzzle text
 if [[ ! -f $PUZZLE ]]; then
-    #TODO: crawl the page and turn the puzzle text into markdown
-    #curl $API > $PUZZLE 2> /dev/null
-    echo "NOT IMPLEMENTED" > $PUZZLE
+	VENV=work-venv
+
+	if [[ ! -d $VENV ]]; then
+		python -m venv $VENV
+	fi
+
+	source $VENV/bin/activate
+	pip install -r etc/requirements.txt
+
+	python3 bin/puzzle-to-markdown.py $YEAR $DAY
+	#python3 bin/puzzle-to-markdown.py $YEAR $DAY > $PUZZLE
 fi
 
 # create main file
 if [[ -f $MAIN ]]; then
     echo "Oops. Looks like there's already code for 12/$DAY/$YEAR. You'll need to delete $MAIN to start from scratch."
 else
-    cp template.py $MAIN
+    cp etc/template.py $MAIN
 fi
 
 #get input
